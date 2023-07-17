@@ -1,4 +1,0 @@
-{"Title":"Go Lang API Testing","author":"Vijaykumar Bharoliya","link":"https://www.amazon.com/dp/B089KVK23P","Id":"1"}
-{"Title":"Space Science and Astronomy","author":"Diya Bharoliya","link":"https://www.amazon.com/dp/B0123456P","Id":"2"}
-{"Title":"REST Webservice 21 Days","author":"Maahi Bharoliya","link":"https://www.amazon.com/dp/B0123456P","Id":"5"}
-{"Title":"Python for Enterprise Application","author":"Wipro Team","link":"https://www.amazon.com/dp/B089KVK23P","Id":"6"}
