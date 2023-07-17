@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 package main
 
 import (
@@ -153,7 +152,6 @@ func CommonMiddleware(next http.Handler) http.Handler {
 		next.ServeHTTP(w, r)
 	})
 }
-=======
 package main
 
 import (
@@ -308,4 +306,3 @@ func CommonMiddleware(next http.Handler) http.Handler {
 		next.ServeHTTP(w, r)
 	})
 }
->>>>>>> 1924c79e50cabb512fc0038add33ee24bc86cbca

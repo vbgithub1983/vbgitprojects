@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 package main
 
 import (
@@ -83,7 +82,6 @@ func TestUploadArticleToFile(t *testing.T) {
 	}
 
 }
-=======
 package main
 
 import (
@@ -168,4 +166,3 @@ func TestUploadArticleToFile(t *testing.T) {
 	}
 
 }
->>>>>>> 1924c79e50cabb512fc0038add33ee24bc86cbca

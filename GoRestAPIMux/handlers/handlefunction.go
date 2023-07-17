@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 package handlers
 
 import (
@@ -122,7 +121,6 @@ func ReturnAllArticles(w http.ResponseWriter, r *http.Request) {
 	w.WriteHeader(http.StatusOK)
 	json.NewEncoder(w).Encode(articles)
 }
-=======
 package handlers
 
 import (
@@ -246,4 +244,3 @@ func ReturnAllArticles(w http.ResponseWriter, r *http.Request) {
 	w.WriteHeader(http.StatusOK)
 	json.NewEncoder(w).Encode(articles)
 }
->>>>>>> 1924c79e50cabb512fc0038add33ee24bc86cbca

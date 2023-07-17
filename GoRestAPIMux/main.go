@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 package main
 
 import (
@@ -52,7 +51,6 @@ func main1() {
 	fmt.Println("This is testing from nano editor")
 	handleNewsRequests()
 }
-=======
 package main
 
 import (
@@ -106,4 +104,3 @@ func main1() {
 	fmt.Println("This is testing from nano editor")
 	handleNewsRequests()
 }
->>>>>>> 1924c79e50cabb512fc0038add33ee24bc86cbca

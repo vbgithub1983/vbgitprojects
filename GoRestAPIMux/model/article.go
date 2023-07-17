@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 package model
 
 import (
@@ -30,7 +29,6 @@ func (articlePointer *Article) UpdateArticleDetail(title string, author string, 
 func TestPrint() {
 	fmt.Println("This is working")
 }
-=======
 package model
 
 import (
@@ -62,4 +60,3 @@ func (articlePointer *Article) UpdateArticleDetail(title string, author string, 
 func TestPrint() {
 	fmt.Println("This is working")
 }
->>>>>>> 1924c79e50cabb512fc0038add33ee24bc86cbca
