@@ -4,6 +4,7 @@ import (
 	"bytes"
 	"crypto/sha256"
 	"crypto/subtle"
+	_ "docs"
 	"encoding/json"
 	"fmt"
 	"handlers"
@@ -14,6 +15,7 @@ import (
 	"strings"
 
 	"github.com/gorilla/mux"
+	httpSwagger "github.com/swaggo/http-swagger/v2"
 )
 
 // Articles ...
@@ -55,9 +57,17 @@ func handleRequests() {
 	myRouter.HandleFunc("/article/{id}", returnSingleArticle).Methods(http.MethodGet)
 	myRouter.HandleFunc("/articlefromfile/{id}", handlers.LoadArticleFromFile).Methods(http.MethodGet)
 
-	myRouter.Use(JwtVerify)
+	//myRouter.Use(JwtVerify)
 	//myRouter.HandleFunc("/uploadarticle", handlers.UploadArticleToFile).Methods(http.MethodPost)
-	myRouter.HandleFunc("/uploadarticle", handlers.UploadArticleToFile).Methods(http.MethodPost)
+	//myRouter.HandleFunc("/uploadarticle", handlers.UploadArticleToFile).Methods(http.MethodPost)
+	//myRouter.HandleFunc("/documentation", httpSwagger.WrapHandler(swaggerFiles.Handler)).Methods(http.MethodGet)
+	//myRouter.PathPrefix("/swagger").Handler(httpSwagger.WrapHandler)
+	myRouter.PathPrefix("/swagger/").Handler(httpSwagger.Handler(
+		httpSwagger.URL("http://localhost:8000/swagger/doc.json"), //The url pointing to API definition
+		httpSwagger.DeepLinking(true),
+		httpSwagger.DocExpansion("none"),
+		httpSwagger.DomID("swagger-ui"),
+	)).Methods(http.MethodGet)
 	log.Fatal(http.ListenAndServe(":8000", myRouter))
 }
 
@@ -85,6 +95,20 @@ func returnSingleArticle(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
+// @title Swagger Example API
+// @version 1.0
+// @description This is a sample server Petstore server.
+// @termsOfService http://swagger.io/terms/
+
+// @contact.name API Support
+// @contact.url http://www.swagger.io/support
+// @contact.email support@swagger.io
+
+// @license.name Apache 2.0
+// @license.url http://www.apache.org/licenses/LICENSE-2.0.html
+
+// @host localhost
+// @BasePath /v2
 func main() {
 	handleRequests()
 }
@@ -145,7 +169,7 @@ func loadArticleInFile(articleList []model.Article, fileName string) error {
 
 func CommonMiddleware(next http.Handler) http.Handler {
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-		w.Header().Add("Content-Type", "application/json")
+		//w.Header().Add("Content-Type", "application/json")
 		w.Header().Set("Access-Control-Allow-Origin", "*")
 		w.Header().Set("Access-Control-Allow-Methods", "POST, GET, OPTIONS, PUT, DELETE")
 		w.Header().Set("Access-Control-Allow-Headers", "Accept, Content-Type, Content-Length, Accept-Encoding, X-CSRF-Token, Authorization, Access-Control-Request-Headers, Access-Control-Request-Method, Connection, Host, Origin, User-Agent, Referer, Cache-Control, X-header")

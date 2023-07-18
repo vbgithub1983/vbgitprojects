@@ -12,6 +12,8 @@ import (
 
 	"model"
 
+	_ "docs"
+
 	"github.com/gorilla/mux"
 )
 
@@ -90,6 +92,13 @@ func Ping(w http.ResponseWriter, r *http.Request) {
 	json.NewEncoder(w).Encode("I am alive....")
 }
 
+// ReturnAllArticles example
+//
+//	@Summary		Get All Articles
+//	@Description	Get All Articles
+//	@Produce		json
+//	@Success		200		string			"ok"
+//	@Router			/articles [get]
 func ReturnAllArticles(w http.ResponseWriter, r *http.Request) {
 	fmt.Println("Endpoint Hit: ReturnAllArticles")
 	w.Header().Add("Content-Type", "application/json")
