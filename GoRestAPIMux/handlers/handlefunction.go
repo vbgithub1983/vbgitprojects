@@ -17,6 +17,14 @@ import (
 	"github.com/gorilla/mux"
 )
 
+// LoadArticleFromFile example
+//
+//	@Summary		Load Article From File
+//	@Description	Load Article From File base on ID
+//	@Produce		json
+//	@Param			id	path		string				true	"ID"
+//	@Success		200		string			"ok"
+//	@Router			/articlefromfile/{id} [get]
 func LoadArticleFromFile(w http.ResponseWriter, r *http.Request) {
 	file, err := os.Open("./article/article.txt") // strings.NewReader("article.txt")
 	fmt.Fprintln(os.Stderr, "Error Reading From File:", err)

@@ -1,6 +1,23 @@
 info:
   contact: {}
 paths:
+  /articlefromfile/{id}:
+    get:
+      description: Load Article From File base on ID
+      parameters:
+      - description: ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: ok
+          schema:
+            type: json
+      summary: Load Article From File
   /articles:
     get:
       description: Get All Articles
@@ -10,6 +27,6 @@ paths:
         "200":
           description: ok
           schema:
-            type: string
+            type: json
       summary: Get All Articles
 swagger: "2.0"
